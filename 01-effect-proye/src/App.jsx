@@ -1,33 +1,11 @@
-import { useState,useEffect } from 'react'
-import Observador from './Observador';
-import axios from "axios"
+import ProductosReadView from "./views/ProductosReadView";
 
-
-
-const App = () => {
-  const [contador, setcontador] = useState(18);
-
-  const manejarContador = () => {
-    setcontador(contador+1)
-  }
-
-
-
- //  operador terneario = condición ? verdadero : f
-
-
-
+function App() {
   return (
     <>
-        <h1>App: {contador}</h1>
-        <button onClick={manejarContador}>
-          Aumentar
-        </button>
-        <hr/>
-        <Observador contador = {contador}/>
-
+      <ProductosReadView />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
