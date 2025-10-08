@@ -8,7 +8,7 @@ import CreateProductView from "./views/CreateProductView"
 
 
 //rafce
-import ProductsView from './views/ProductsView'
+import ProductosReadView from "./views/ProductosReadView"
 
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
     // </div>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ProductsView />} />
+        <Route path="/" element={<ProductosReadView />} />
         <Route path="/crear" element={<CreateProductView />} />
       </Routes>
     
@@ -27,4 +27,5 @@ const App = () => {
 }
 
 export default App
+
 
