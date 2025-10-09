@@ -56,6 +56,7 @@ const CreateProductView = () => {
         <h1>Crear Producto</h1>
 
         <form onSubmit={handleSubmit}>
+          
           {inputsInfo.map((item, index) => (
           <Input
           key={index}
