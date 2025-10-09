@@ -8,13 +8,13 @@ export default function ProductosReadView() {
   // Estado para manejar errores
   const [error, setError] = useState(null);
 
-  // useEffect: se ejecuta una sola vez al cargar el componente
+  // useEffect: se ejecuta solo una vez por el [] del final
   useEffect(() => {
     // Función interna que llama al servicio
     async function fetchData() {
       try {
         const data = await getProductos();
-        setProductos(data); // guardamos los productos
+        setProductos(data); // guardamos los datos de mockAPI en 'productos'
       } catch (e) {
         setError("No se pudieron cargar los productos");
       }
@@ -29,7 +29,7 @@ export default function ProductosReadView() {
   }
 
   if (productos.length === 0) {
-    return <div>Cargando productos...</div>;
+    return <div>Cargando productos...</div>; //Si aún no llegan los productos
   }
 
   // Renderizamos los productos en una tabla
@@ -46,8 +46,8 @@ export default function ProductosReadView() {
           </tr>
         </thead>
         <tbody>
-          {productos.map((p) => (
-            <tr key={p.id}>
+          {productos.map((p) => /* Uso map para recorrer cada producto y crar una fila x producto*/ ( 
+            <tr key={p.id}> {/*Cada fila necesita una clave única*/}
               <td className="border px-2 py-1">{p.producto_nombre}</td>
               <td className="border px-2 py-1">S/ {p.producto_precio}</td>
               <td className="border px-2 py-1">{p.producto_descripcion}</td>
@@ -60,7 +60,8 @@ export default function ProductosReadView() {
                     e.currentTarget.onerror = null; // evita loop si también falla
                     e.currentTarget.src = `https://picsum.photos/seed/${p.id}/200/200`;
                   }}
-                />
+                /> 
+                {/* Agregué el enlace con picsum porque las imagenes tenían restricción con otras URLs */}
               </td>
             </tr>
           ))}
