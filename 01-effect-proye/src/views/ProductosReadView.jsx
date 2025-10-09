@@ -35,9 +35,9 @@ export default function ProductosReadView() {
   // Renderizamos los productos en una tabla
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Productos Seiri_peru</h1>
+      <h1 className="text-2xl font-bold mb-4" style= {{ fontFamily: "'Roboto Slab', serif" }}>Productos Seiri_peru</h1>
       <table className="table-auto w-full border">
-        <thead className="bg-gray-200">
+        <thead className="bg-gray-200 text-black">
           <tr>
             <th className="border px-2 py-1">Nombre</th>
             <th className="border px-2 py-1">Precio</th>
