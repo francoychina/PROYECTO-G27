@@ -1,14 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateProductView from "./views/CreateProductView"
-
-
-
-
-
-
-
+import Navbar from "./components/Navbar";
 //rafce
-import ProductsView from './views/ProductsView'
+import ProductosReadView from "./views/ProductosReadView"
 
 
 const App = () => {
@@ -16,15 +10,19 @@ const App = () => {
     // <div>App  
     //   <ProductsView />
     // </div>
+  <div className="max-w-[1120px] mx-auto">
+    <Navbar/>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ProductsView />} />
+        <Route path="/" element={<ProductosReadView />} />
         <Route path="/crear" element={<CreateProductView />} />
       </Routes>
     
     </BrowserRouter>
+  </div>
   )
 }
 
 export default App
+
 
